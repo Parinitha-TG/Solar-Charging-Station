@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Charging Station</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h1 class="text-center mb-4">☀️ Solar Charging Station</h1>
+                
+                <div class="charging-status alert alert-info text-center mb-4" role="alert">
+                    Ready to charge
+                </div>
+
+                <!-- Step 1: Time Selection -->
+                <div id="timeSelection" class="step-content">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="hours">Hours</label>
+                                <input type="number" class="form-control" id="hours" min="0" max="24" value="0">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="minutes">Minutes</label>
+                                <input type="number" class="form-control" id="minutes" min="0" max="59" value="0">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="seconds">Seconds</label>
+                                <input type="number" class="form-control" id="seconds" min="0" max="59" value="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button id="proceedToPayment" class="btn btn-primary btn-lg">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Payment -->
+                <div id="paymentSection" class="step-content" style="display: none;">
+                    <div class="text-center mb-4">
+                        <h3>Scan QR Code to Pay</h3>
+                        <p class="mb-3">Amount: ₹<span id="paymentAmount">0</span></p>
+                        <div id="qrCode" class="mb-3">
+                            <!-- QR code will be inserted here -->
+                        </div>
+                        <p class="text-muted mb-3">After payment, click the button below</p>
+                        <button id="verifyPayment" class="btn btn-success btn-lg">
+                            I have completed the payment
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Charging -->
+                <div id="chargingSection" class="step-content" style="display: none;">
+                    <div class="text-center mb-4">
+                        <h3>Charging in Progress</h3>
+                        <div id="timer" class="display-4 mb-3">
+                            00:00:00
+                        </div>
+                        <button id="startButton" class="btn btn-primary btn-lg">
+                            Start Charging
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">System Status</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <p><strong>Connection:</strong> <span id="connectionStatus">Connected</span></p>
+                            </div>
+                            <div class="col-6">
+                                <p><strong>Charging:</strong> <span id="chargingStatus">No</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
+    
+    <!-- QR Code library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
