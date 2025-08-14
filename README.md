@@ -103,3 +103,6 @@ solar-charging-station/
 
 ## License
 MIT License 
+
+## Contributors
+[Sanjana T G](https://github.com/sanjanatg)
