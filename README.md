@@ -12,7 +12,6 @@ This system allows users to:
 5. Automatically charge lead acid battery via solar panel when not in use
 
 ## Components
-
 ### Hardware Required
 - ESP32 Development Board
 - 5V Relay Module
@@ -22,6 +21,7 @@ This system allows users to:
 - USB Charging Module (5V output)
 - Connecting wires
 - Project enclosure
+![1000038652](https://github.com/user-attachments/assets/ad94483e-62d6-401e-8b98-d12b5f46d6ad)
 
 ### Software Stack
 - Frontend: HTML, CSS, JavaScript
